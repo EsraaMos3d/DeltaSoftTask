@@ -1,0 +1,93 @@
+<div class="container pt-3">
+    <div class="col-10 m-auto">
+        <h3>Add new tasks</h3>
+        <form #AddTask="ngForm" (ngSubmit)="onSubmit(AddTask)">
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label>AssignTo</label>
+
+                    <div class="ng-autocomplete">
+                        <ng-autocomplete name="memberName" ngModel #memberName="ngModel" class="form-control" required
+                            [data]="members" [searchKeyword]="keyword" placeholder="AutoComplete member Name"
+                            (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)'
+                            [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+                        </ng-autocomplete>
+
+                        <ng-template #itemTemplate let-item>
+                            <a [innerHTML]="item.memberName"></a>
+                        </ng-template>
+
+                        <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                        </ng-template>
+                    </div>
+                    <input name="FK_Member_Id" [(ngModel)]="task.FK_Member_Id" #FK_Member_Id="ngModel" type="hidden">
+                    <div class="alert alert-danger" *ngIf="FK_Member_Id.touched && !FK_Member_Id.valid">
+                        Member is required.
+                    </div>
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label> deliver date</label>
+                    <input name="deliverdate" [(ngModel)]="task.deliver_date" #deliverdate="ngModel"
+                        class="form-control" type="date" min="{{date | date:'yyyy-MM-dd'}}" required>
+                    <div class="alert alert-danger" *ngIf="deliverdate.touched && !deliverdate.valid">
+                        Date is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="form-group col-12 col-md-11">
+                    <label>Description</label>
+                    <textarea name="Description" [(ngModel)]="task.Description" #Description="ngModel"
+                        class="form-control" required minlength="10" maxlength="100"></textarea>
+                    <div class="alert alert-danger" *ngIf="Description.touched && !Description.valid">
+                        <div *ngIf="Description.errors && Description.errors['required']"> Description is required.
+                        </div>
+                        <div *ngIf="Description.errors && Description.errors['minlength']">Description is minimum {{
+                            Description.errors && Description.errors['minlength'].requiredLength }} character.</div>
+                        <div *ngIf="Description.errors && Description.errors['maxlength']">Description is maximum 10
+                            character.</div>
+                    </div>
+                </div>
+                <div class="form-group col-12 col-md-1" style="padding-top:30px">
+                    <button type="submit" class="btn btn-primary btn-block"
+                        [disabled]="AddTask.invalid ||FK_Member_Id.value ==0 ">Add</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+    <div class="col-10 m-auto">
+        <h3>Tasks</h3>
+        <div style="max-height: 400px; overflow-y: scroll;">
+            <div *ngFor="let item of tasks;" class="card my-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-10">
+                            {{item.member.memberName}}
+                        </div>
+                        <div class="col-md-2">
+                            {{item.deliver_date}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{item.description}}</p>
+                        <div class="row" style=" display: flex; justify-content: flex-end;">
+                            <div class="col-md-2 ml-auto">
+                                <div *ngIf="item.isCompleted"> <label style="color:red">Done</label></div>
+                                <div *ngIf="!item.isCompleted">
+                                    <input [value]="item.isCompleted" (change)="onCheckboxChange(item,$event)"
+                                        type="checkbox" name="" id="markAsDone">
+                                    <label for="markAsDone">Mark as done</label>
+                                </div>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.ng-autocomplete {
+    width: 100%;
+}
+.ng-autocomplete {
+    padding: 0;
+}
+.form-control {
+    height: 40px;
+    box-shadow: 0 1px 3px #0003, 0 1px 1px #00000024, 0 2px 1px -1px #0000001f;
+}
+.alert {
+    position: relative;
+    padding: 5px 8px;
+    margin-top: 5px;
+}
+label {
+    margin-bottom: 5px;
+}
+h3{
+    margin-top:15px;
+    margin-bottom: 0;
+}

@@ -1,0 +1,10 @@
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\bin\Debug\netcoreapp3.1\DeltaSoftTask.Core.deps.json
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\bin\Debug\netcoreapp3.1\DeltaSoftTask.Core.dll
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\bin\Debug\netcoreapp3.1\DeltaSoftTask.Core.pdb
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.csproj.AssemblyReference.cache
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.AssemblyInfoInputs.cache
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.AssemblyInfo.cs
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.csproj.CoreCompileInputs.cache
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.dll
+E:\Project\DeltaSoftTask\DeltaSoftTask.Core\obj\Debug\netcoreapp3.1\DeltaSoftTask.Core.pdb
